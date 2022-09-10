@@ -7,7 +7,7 @@ function getComputerChoice() {
     case 2:
       return "paper";
     case 3:
-      return "scissors"
+      return "scissors";
   }
 }
 
@@ -15,7 +15,7 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
 
   if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
-    return "Invalid Input!"
+    return "Invalid Input!";
   }
 
   if (playerSelection == computerSelection) {

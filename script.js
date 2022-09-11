@@ -3,18 +3,39 @@ function getComputerChoice() {
 
   switch (choiceNum) {
     case 1:
-      return "rock";
+      return "Rock";
     case 2:
-      return "paper";
+      return "Paper";
     case 3:
-      return "scissors";
+      return "Scissors";
+  }
+}
+
+function capitalize(str) {
+  str = str.toLowerCase();
+  str = str[0].toUpperCase() + str.slice(1);
+  return str;
+}
+
+function startBattle(playerSelection, computerSelection) {
+
+  if ((playerSelection == "Rock" && computerSelection == "Paper") ||
+    (playerSelection == "Scissors" && computerSelection == "Rock") ||
+    (playerSelection == "Paper" && computerSelection == "Scissors")) {
+      return `You Lose... ${computerSelection} beats ${playerSelection}`;
+  }
+
+  if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
+    (playerSelection == "Scissors" && computerSelection == "Paper") || 
+    (playerSelection == "Paper" && computerSelection == "Rock")) {
+      return `You Win! ${playerSelection} beats ${computerSelection}`;
   }
 }
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
+  playerSelection = capitalize(playerSelection);
 
-  if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
+  if (playerSelection != "Rock" && playerSelection != "Paper" && playerSelection != "Scissors") {
     return "Invalid Input!";
   }
 
@@ -22,29 +43,7 @@ function playRound(playerSelection, computerSelection) {
     return "Tie!";
   }
 
-  if (playerSelection == "rock" && computerSelection == "paper") {
-    return "You Lose... Paper beats Rock";
-  }
-
-  if (playerSelection == "rock" && computerSelection == "scissors") {
-    return "You Win! Rock beats Scissors";
-  }
-
-  if (playerSelection == "scissors" && computerSelection == "paper") {
-    return "You Win! Scissors beats Paper";
-  }
-
-  if (playerSelection == "scissors" && computerSelection == "rock") {
-    return "You Lose... Rock beats Scissors";
-  }
-
-  if (playerSelection == "paper" && computerSelection == "scissors") {
-    return "You Lose... Scissors beats Paper";
-  }
-
-  if (playerSelection == "paper" && computerSelection == "rock") {
-    return "You Win! Paper beats Rock";
-  }
+  return startBattle(playerSelection, computerSelection);
 }
 
 function game() {

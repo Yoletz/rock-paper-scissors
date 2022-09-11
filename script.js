@@ -46,6 +46,12 @@ function playRound(playerSelection, computerSelection) {
   return startBattle(playerSelection, computerSelection);
 }
 
+function logResult(yourScore, compScore) {
+  if (yourScore > compScore) console.log("You win the game!");
+  if (compScore > yourScore) console.log("You lose the game...");
+  if (yourScore === compScore) console.log("It's a draw!");
+}
+
 function game() {
   let yourScore = 0;
   let compScore = 0;
@@ -65,14 +71,12 @@ function game() {
     if (result == "Tie!") {
       yourScore += 0.5;
       compScore += 0.5;
-    } else if (result[4] === "L") {
+    } else if (result.slice(0, 11) == "You Lose...") {
       compScore++;
-    } else if (result[4] === "W") {
+    } else if (result.slice(0, 8) == "You Win!") {
       yourScore++;
     }
   }
 
-  if (yourScore > compScore) console.log("You win the game!");
-  if (compScore > yourScore) console.log("You lose the game...");
-  if (yourScore === compScore) console.log("It's a draw!");
+  logResult(yourScore, compScore);
 }

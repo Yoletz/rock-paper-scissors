@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#title {
+  padding: 0;
+  margin: 7vh 0;
+  font-size: 5vw;
+}
+
+#instruction {
+  font-size: 4vw;
+  margin: 4vh 0;
+}
+
+#buttons > button{
+  margin: 0 5vw;
+  height: 12vh;
+  width: 8vw;
+  font-size: 2vw;
+  color: white;
+  border-radius: 4px;
+}
+
+#rock {
+  background-color: #C32A2A;
+}
+
+#paper {
+  background-color: #4894b3;
+}
+
+#scissors {
+  background-color: #618A3D;
+}
+
+#score {
+  display: flex;
+  margin: 5vh auto;
+  width: 50vw;
+  justify-content: center;
+}
+
+#score > * {
+  border: 1px solid black;
+  flex: 1;
+  font-size: 2vw;
+}
+
+#result {
+  font-size: 3vw;
+}
+
+#rematch {
+  margin: -2vh 0 0 0;
+  padding: 2vh 2vw;
+  font-size: 2vw;
+  border-radius: 4px;
+}
